@@ -33,6 +33,7 @@ class Player(models.Model):
     TotalHeadshot = models.IntegerField(blank=True, null=True, editable=False)
     Killratio = models.DecimalField(blank=True, null=True, editable=False, max_digits=5, decimal_places=2)
     Headshotratio = models.IntegerField(blank=True, null=True, editable=False)
+    Topseason = models.DecimalField(blank=True, null=True, editable=False, max_digits=5, decimal_places=2)
 
     def save(self, *args, **kwargs):
         self.TotalMatches = int(self.Season02_Matches + self.Season03_Matches + self.Season04_Matches + self.Season05_Matches)
@@ -41,4 +42,5 @@ class Player(models.Model):
         self.TotalHeadshot = int(self.Season02_Headshot + self.Season03_Headshot + self.Season04_Headshot + self.Season05_Headshot)
         self.Killratio = (self.TotalKills / self.TotalMatches)
         self.Headshotratio = (self.TotalHeadshot / self.TotalKills) * 100
+        self.Topseason = ((self.Season05_Kills / self.Season05_Matches)*10) + (( self.Season05_Headshot / self.Season05_Kills)*100) + ((self.Season05_Wins/ self.Season05_Matches)*100)
         super().save(*args, **kwargs)
