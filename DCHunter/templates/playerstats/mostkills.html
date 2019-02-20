@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" href="{% static 'playerstats/img/fav-icon.png' %}" type="image/x-icon" />
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Most Kills</title>
+
+        <!-- Icon css link -->
+        <link href="{% static 'playerstats/css/font-awesome.min.css' %}" rel="stylesheet">
+        <link href="{% static 'playerstats/vendors/elegant-icon/style.css' %}" rel="stylesheet">
+        <link href="{% static 'playerstats/vendors/themify-icon/themify-icons.css' %}" rel="stylesheet">
+        <!-- Bootstrap -->
+        <link href="{% static 'playerstats/css/bootstrap.min.css' %}" rel="stylesheet">
+
+        <!-- Rev slider css -->
+        <link href="{% static 'playerstats/vendors/revolution/css/settings.css' %}" rel="stylesheet">
+        <link href="{% static 'playerstats/vendors/revolution/css/layers.css' %}" rel="stylesheet">
+        <link href="{% static 'playerstats/vendors/revolution/css/navigation.css' %}" rel="stylesheet">
+        <link href="{% static 'playerstats/vendors/animate-css/animate.css' %}" rel="stylesheet">
+
+        <!-- Extra plugin css -->
+        <link href="{% static 'playerstats/vendors/owl-carousel/owl.carousel.min.css' %}" rel="stylesheet">
+
+        <link href="{% static 'playerstats/css/style.css' %}" rel="stylesheet">
+        <link href="{% static 'playerstats/css/responsive.css' %}" rel="stylesheet">
+        <link href="{% static 'playerstats/css/table.css' %}" rel="stylesheet">
+</head>
+<body>
+        <!--================Header Menu Area =================-->
+        <header class="main_menu_area">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#"><img src="{% static 'playerstats/img/pubglogo.png' %}" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                      <li class="nav-item"><a class="nav-link" href="{% url 'basic_app:playerlist' %}">Home</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{% url 'basic_app:totalmatches' %}">Total Matches</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{% url 'basic_app:totalkills' %}">Total Kills</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{% url 'basic_app:totalwins' %}">Wins</a></li>
+                      <li class="nav-item"><a class="nav-link"  href="{% url 'basic_app:totalheadshot' %}">HeadShot</a></li>
+                      <li class="nav-item active"><a class="nav-link"  href="{% url 'basic_app:mostkills' %}">Most kills</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!--================End Header Menu Area =================-->
+
+        <!--================Banner Area =================-->
+        <section class="banner_areakills">
+            <div class="container">
+                <div class="banner_text_inner02">
+                    <h4>Most kills in a single match</h4>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+
+                    {% if playermostkillDict %}
+                    <div class="container">
+                      <table class="onetable">
+                      	<tbody>
+                          {% for person in playermostkillDict %}
+                      		<tr>
+                      			<td>{{person.PlayerName}}</td>
+                      			<td>{{person.Mostkills}}</td>
+                      		</tr>
+                          {% endfor %}
+                      	</tbody>
+                      </table>
+                    </div>
+                  {% endif %}
+                </div>
+                </div>
+
+            </div>
+        </section>
+        <!--================End Banner Area =================-->
+        <!--div class="limiter"-->
+          <!--div class="container-table100"-->
+
+          <!--/div-->
+        <!--/div-->
+</body>
