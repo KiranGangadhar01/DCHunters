@@ -48,3 +48,8 @@ def mostkills(request):
     playermostkillList = Player.objects.order_by('-Mostkills')
     playermostkillDict = {"playermostkillDict":playermostkillList}
     return render(request,'playerstats/mostkills.html',context=playermostkillDict)
+
+def topseason05(request):
+    topseason05List = Player.objects.order_by('-Topseason')
+    topseason05Dict = {"topseason05Dict":topseason05List}
+    return render(request,'playerstats/topseason05.html',context=topseason05Dict)
