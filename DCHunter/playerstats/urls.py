@@ -11,4 +11,5 @@ urlpatterns = [
     path('totalkills/', views.kills, name='totalkills'),
     path('headshot/', views.headshot, name='totalheadshot'),
     path('mostkills/', views.mostkills, name='mostkills'),
+    path('topseason05/', views.topseason05, name='topseason05'),
 ]
