@@ -513,10 +513,10 @@ i:before {
 }
 
 .banner_area02 {
-  background: url(../img/pubg04.jpg) no-repeat scroll center center;
+  background: url(../img/pubg05.jpg) no-repeat scroll center center;
   background-size: cover;
   position: relative;
-  min-height: 800px;
+  min-height: 1000px;
 }
 
 .banner_area02:before {
@@ -533,7 +533,7 @@ i:before {
   background: url(../img/pubgcrate.jpg) no-repeat scroll center center;
   background-size: cover;
   position: relative;
-  min-height: 800px;
+  min-height: 1000px;
 }
 
 .banner_areakills:before {
@@ -550,7 +550,7 @@ i:before {
   background: url(../img/pubg08.jpg) no-repeat scroll center center;
   background-size: cover;
   position: relative;
-  min-height: 800px;
+  min-height: 1000px;
 }
 
 .banner_twins:before {
@@ -567,7 +567,7 @@ i:before {
   background: url(../img/pubg07.jpg) no-repeat scroll center center;
   background-size: cover;
   position: relative;
-  min-height: 800px;
+  min-height: 1000px;
 }
 
 .banner_tkills:before {
@@ -584,10 +584,27 @@ i:before {
   background: url(../img/pubg06.jpg) no-repeat scroll center center;
   background-size: cover;
   position: relative;
-  min-height: 800px;
+  min-height: 1000px;
 }
 
 .banner_headshot:before {
+  content: "";
+  background: rgba(4, 8, 29, 0.7);
+  position: absolute;
+  left: 0px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.banner_tseason {
+  background: url(../img/pubgchintu.jpg) no-repeat scroll center center;
+  background-size: cover;
+  position: relative;
+  min-height: 1000px;
+}
+
+.banner_tseason:before {
   content: "";
   background: rgba(4, 8, 29, 0.7);
   position: absolute;
