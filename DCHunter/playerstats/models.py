@@ -6,7 +6,9 @@ class Player(models.Model):
     Likes = models.IntegerField(default=1)
 
     Season02_Matches = models.IntegerField(default=1)
+    Season02_Matches = models.IntegerField(default=1)
     Season02_Wins = models.IntegerField()
+    Season02_Wins = models.IntegerField(
     Season02_Kills = models.IntegerField(default=1)
     Season02_Headshot = models.IntegerField(default=1)
 
